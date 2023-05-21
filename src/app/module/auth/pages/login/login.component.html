@@ -1,29 +1,33 @@
-
 <div id="video-background">
-    <video autoplay muted loop id="my-video">
-      <source src="/assets/video/pexels-oleg-gamulinskii-3163534-1920x1080-30fps.mp4" type="video/mp4">
-    </video>
-  </div>
+  <video autoplay muted loop id="my-video">
+    <source src="/assets/video/pexels-oleg-gamulinskii-3163534-1920x1080-30fps.mp4" type="video/mp4">
+  </video>
+</div>
 
-  <div class=" center-div">
-    <div class="container">
-        <div class="row">
-          <div class="col-md-6 mx-auto">
-            <div class="login-container">
-              <h3 class="text-center mb-4">Iniciar Sesión</h3>
-              <form class="login-form">
-                <div class="mb-3">
-                  <label for="email" class="form-label">Correo Electrónico</label>
-                  <input type="email" class="form-control" id="email" placeholder="Ingrese su correo electrónico">
-                </div>
-                <div class="mb-3">
-                  <label for="password" class="form-label">Contraseña</label>
-                  <input type="password" class="form-control" id="password" placeholder="Ingrese su contraseña">
-                </div>
-                <button type="submit" class="btn btn-primary">Ingresar</button>
-              </form>
-            </div>
+<div class=" center-div">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 mx-auto">
+        <div class="login-container">
+          <div class="login-logo">
+            <img src="/assets/icons/FavicoLukaCova.png" alt="Logo">
+            <h3 class="mb-0">Iniciar Sesión</h3>
           </div>
+          <form [formGroup]="f" (ngSubmit)="submit()" class="login-form">
+            <div class="mb-3">
+              <label for="email" class="form-label">Correo Electrónico</label>
+              <input type="email" formControlName="email" class="form-control" id="email"
+                placeholder="Ingrese su correo electrónico">
+            </div>
+            <div class="mb-3">
+              <label for="password" class="form-label">Contraseña</label>
+              <input type="password" formControlName="passWord" class="form-control" id="password"
+                placeholder="Ingrese su contraseña">
+            </div>
+            <button type="submit" [disabled]="!Formvalido" class="btn btn-primary">Ingresar</button>
+          </form>
         </div>
       </div>
+    </div>
   </div>
+</div>
