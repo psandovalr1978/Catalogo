@@ -9,7 +9,7 @@ import { UserLogin } from 'src/app/shared/models/user-login.model';
 export class SesionService {
   private _loginValido: boolean = false;
   get LoginValido(): boolean {
-    return  this.cookieService.get('login') !> "";
+    return  sessionStorage.getItem('login') !>  ""; //this.cookieService.get('login') !> "";
   }
 
   constructor(private router:Router, private cookieService: CookieService) { }
@@ -18,6 +18,9 @@ export class SesionService {
     if (userLogin.email == 'admin@lukacova.com' && userLogin.passWord == '1234.Admin') {
       this._loginValido = true;
       this.cookieService.set('login', 'true', 1 / 24 / 60);
+      const sesion:any = {fechaHora: new Date()}
+      sessionStorage.setItem('login', JSON.stringify(sesion));
+
     } else {
       this._loginValido = false;
     }
@@ -25,6 +28,7 @@ export class SesionService {
 
   logout(){
     this.cookieService.delete('login');
+    sessionStorage.removeItem('login');
   }
  
 }

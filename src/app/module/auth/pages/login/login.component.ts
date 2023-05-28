@@ -40,7 +40,7 @@ export class LoginComponent implements OnInit {
       });
     }
     else{
-      this.router.navigate(['/Catalogo']);
+      this.router.navigate(['/Catalogos']);
     }
   }
 }
