@@ -12,11 +12,7 @@ const routes: Routes = [
   {
     path:'Catalogos/serach?q={article}',
     component: SerachComponent
-  },
-  {
-    path:'/#/catalogs',
-    component:CatalogsComponent
-  },
+  }
 ];
 
 @NgModule({

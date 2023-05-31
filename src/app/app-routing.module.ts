@@ -10,10 +10,6 @@ const routes: Routes = [ {
   path:'',
   loadChildren:() => import('./module/catalogo/catalogo.module').then(m=> m.CatalogoModule),
   canActivate: [SesionGuard]
-},
-{
-  path: '**',
-  redirectTo:'/auth/login'
 }
 ];
 
